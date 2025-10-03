@@ -3,22 +3,12 @@ services:
   n8n:
     image: n8nio/n8n:latest
     restart: always
-    ports:
-      - 5678:5678
     environment:
-      # GANTI DENGAN ZONA WAKTU INDONESIA (MISALNYA Asia/Jakarta)
-      GENERIC_TIMEZONE: 'Asia/Jakarta' 
-      # NILAI INI AKAN DIISI OTOMATIS OLEH RAILWAY SAAT DEPLOYMENT
-      N8N_HOST: '' 
+      # Variabel-variabel ini akan diisi di dashboard Railway
+      GENERIC_TIMEZONE: ''
+      N8N_HOST: ''
       N8N_PORT: 5678
       N8N_PROTOCOL: https
-      # KEAMANAN: AKTIFKAN BASIC AUTH UNTUK MENGAKSES UI N8N
-      N8N_BASIC_AUTH_ACTIVE: 'true'
-      N8N_BASIC_AUTH_USER: 'admin'
-      # GANTI DENGAN KATA SANDI YANG KUAT DAN RAHASIA ANDA!
-      N8N_BASIC_AUTH_PASSWORD: 'KataSandiAndaYangKuat' 
-    volumes:
-      - n8n_data:/home/node/.n8n
-
-volumes:
-  n8n_data:
+      N8N_BASIC_AUTH_ACTIVE: ''
+      N8N_BASIC_AUTH_USER: ''
+      N8N_BASIC_AUTH_PASSWORD: ''
